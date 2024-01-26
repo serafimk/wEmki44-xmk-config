@@ -64,14 +64,7 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <1 1>;
-            then-layer = <1>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     combos {
         compatible = "zmk,combos";
@@ -94,6 +87,36 @@
         space {
             bindings = <&kp SPACE>;
             key-positions = <3 4>;
+        };
+
+        y {
+            bindings = <&kp Y>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        h {
+            bindings = <&kp H>;
+            key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        n {
+            bindings = <&kp N>;
+            key-positions = <27 28>;
+            layers = <0>;
+        };
+
+        u {
+            bindings = <&kp U>;
+            key-positions = <2 15>;
+            layers = <0>;
+        };
+
+        j {
+            bindings = <&kp J>;
+            key-positions = <15 16>;
+            layers = <0>;
         };
     };
 
@@ -128,10 +151,10 @@
 
         NAV {
             bindings = <
-&trans  &kp LCTRL  &trans  &trans    &kp UP_ARROW  &kp END    &kp PG_UP    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &kp LALT   &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN    &trans  &trans  &trans  &trans  &trans  &trans
-        &kp LSHFT  &trans  &trans    &trans        &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans        &trans     &trans       &trans  &trans  &trans
+&kp ESC  &kp LCTRL  &kp LC(A)  &kp HOME  &kp UP_ARROW  &kp END    &kp PG_UP    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+         &kp LALT   &kp LC(C)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN    &trans  &trans  &trans  &trans  &trans  &trans
+         &kp LSHFT  &kp LC(V)  &trans    &trans        &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                                         &trans        &trans     &trans       &trans  &trans  &trans
             >;
         };
 
