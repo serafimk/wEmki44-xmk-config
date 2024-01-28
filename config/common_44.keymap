@@ -68,7 +68,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_KAY";
             #binding-cells = <2>;
-            bindings = <&kp>, <&mo>;
+            bindings = <&kp>, <&to>;
 
             tapping-term-ms = <200>;
         };
