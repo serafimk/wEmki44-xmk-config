@@ -154,9 +154,9 @@
             //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
             bindings = <
-&trans  &trans  &mt Q Y  &mt W U  &mt E I      &mt R O     &mt T P            &kp Y        &kp U            &kp I                &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
-        &trans  &mt A H  &mt S J  &mt D K      &mt F L     &mt G SEMICOLON    &kp H        &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
-        &trans  &mt Z N  &mt X M  &mt C COMMA  &mt V DOT   &mt B SLASH        &kp N        &kp M            &kp COMMA            &kp DOT  &kp FSLH  &mt RALT BSLH
+&trans  &trans  &mt Y Q  &mt U W  &mt I E      &mt O R     &mt P T            &kp Y        &kp U            &kp I                &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
+        &trans  &mt H A  &mt J S  &mt K D      &mt L F     &mt SEMICOLON G    &kp H        &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
+        &trans  &mt N Z  &mt M X  &mt COMMA C  &mt DOT V   &mt SLASH B        &kp N        &kp M            &kp COMMA            &kp DOT  &kp FSLH  &mt RALT BSLH
                                   &lt 3 LCTRL  &lt 2 LALT  &lt 1 LSHFT        &lt 0 ENTER  &lt 0 BACKSPACE  &shift_lang RSHFT 0
             >;
         };
