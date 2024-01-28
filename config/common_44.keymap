@@ -63,6 +63,15 @@
             #binding-cells = <0>;
             bindings = <&kp PRINTSCREEN>, <&Lock>;
         };
+
+        layer_kay: layer_kay {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_KAY";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&mo>;
+
+            tapping-term-ms = <200>;
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -154,19 +163,19 @@
             //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
             bindings = <
-&trans  &trans  &mt Y Q  &mt U W  &mt I E      &mt O R     &mt P T            &kp Y        &kp U            &kp I                &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
-        &trans  &mt H A  &mt J S  &mt K D      &mt L F     &mt SEMICOLON G    &kp H        &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
-        &trans  &mt N Z  &mt M X  &mt COMMA C  &mt DOT V   &mt SLASH B        &kp N        &kp M            &kp COMMA            &kp DOT  &kp FSLH  &mt RALT BSLH
-                                  &lt 3 LCTRL  &lt 2 LALT  &lt 1 LSHFT        &lt 0 ENTER  &lt 0 BACKSPACE  &shift_lang RSHFT 0
+&trans  &trans  &mt Y Q  &mt U W  &mt I E             &mt O R            &mt P T               &kp Y        &kp U            &kp I                &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
+        &trans  &mt H A  &mt J S  &mt K D             &mt L F            &mt SEMICOLON G       &kp H        &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
+        &trans  &mt N Z  &mt M X  &mt COMMA C         &mt DOT V          &mt SLASH B           &kp N        &kp M            &kp COMMA            &kp DOT  &kp FSLH  &mt RALT BSLH
+                                  &layer_kay LCTRL 3  &layer_kay LALT 2  &layer_kay LSHFT 1    &lt 0 ENTER  &lt 0 BACKSPACE  &shift_lang RSHFT 0
             >;
         };
 
         namber_layer {
             bindings = <
-&trans  &trans  &kp LCTRL  &kp N9  &kp N8  &kp N7  &kp EQUAL    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LALT   &kp N7  &kp N6  &kp N5  &kp MINUS    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LSHFT  &kp N3  &kp N2  &kp N1  &kp N0       &trans  &trans  &trans  &trans  &trans  &trans
-                                   &trans  &trans  &trans       &trans  &trans  &trans
+&trans  &trans  &kp LCTRL  &kp N9  &kp N8  &kp N7  &kp EQUAL             &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp LALT   &kp N7  &kp N6  &kp N5  &kp MINUS             &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp LSHFT  &kp N3  &kp N2  &kp N1  &kp N0                &trans  &trans  &trans  &trans  &trans  &trans
+                                   &trans  &trans  &layer_kay LSHFT 0    &trans  &trans  &trans
             >;
 
             label = "NUM";
@@ -174,10 +183,10 @@
 
         navigation_layer {
             bindings = <
-&trans  &trans  &kp LC(A)  &kp HOME  &kp UP_ARROW  &kp END    &kp PG_UP    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LC(C)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LC(V)  &trans    &trans        &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans        &trans     &trans       &trans  &trans  &trans
+&trans  &trans  &kp LC(A)  &kp HOME  &kp UP_ARROW  &kp END            &kp PG_UP    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp LC(C)  &kp LEFT  &kp DOWN      &kp RIGHT          &kp PG_DN    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp LC(V)  &trans    &trans        &trans             &trans       &trans  &trans  &trans  &trans  &trans  &trans
+                                     &trans        &layer_kay LALT 0  &trans       &trans  &trans  &trans
             >;
 
             label = "NAV";
@@ -185,10 +194,10 @@
 
         f_layer {
             bindings = <
-&trans  &trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &kp F11  &kp F12  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans  &trans  &trans     &trans  &trans  &trans
+&trans  &trans  &kp F1   &kp F2   &kp F3              &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F6   &kp F7   &kp F8              &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &kp F11  &kp F12  &trans              &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+                                  &layer_kay LCTRL 0  &trans  &trans     &trans  &trans  &trans
             >;
 
             label = "FAN";
