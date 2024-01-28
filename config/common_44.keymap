@@ -13,9 +13,9 @@
 #define RSE 2
 #define ADJ 3
 
-&lt { quick-tap-ms = <200>; };
+&lt { quick-tap-ms = <250>; };
 
-&mt { quick-tap-ms = <200>; };
+&mt { quick-tap-ms = <150>; };
 
 / {
     macros {
@@ -136,7 +136,7 @@
 
         grave {
             bindings = <&kp GRAVE>;
-            key-positions = <2 16>;
+            key-positions = <3 17>;
             layers = <0>;
         };
     };
@@ -161,31 +161,37 @@
             >;
         };
 
-        NUM {
+        namber_layer {
             bindings = <
 &trans  &trans  &kp LCTRL  &kp N9  &kp N8  &kp N7  &kp EQUAL    &trans  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &kp LALT   &kp N7  &kp N6  &kp N5  &kp MINUS    &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &kp LSHFT  &kp N3  &kp N2  &kp N1  &kp N0       &trans  &trans  &trans  &trans  &trans  &trans
                                    &trans  &trans  &trans       &trans  &trans  &trans
             >;
+
+            label = "NUM";
         };
 
-        NAV {
+        navigation_layer {
             bindings = <
 &trans  &trans  &kp LC(A)  &kp HOME  &kp UP_ARROW  &kp END    &kp PG_UP    &trans  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &kp LC(C)  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN    &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &kp LC(V)  &trans    &trans        &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
                                      &trans        &trans     &trans       &trans  &trans  &trans
             >;
+
+            label = "NAV";
         };
 
-        FUN {
+        f_layer {
             bindings = <
 &trans  &trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5     &trans  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10    &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &kp F11  &kp F12  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
                                   &trans  &trans  &trans     &trans  &trans  &trans
             >;
+
+            label = "FAN";
         };
     };
 };
