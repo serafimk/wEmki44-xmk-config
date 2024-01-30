@@ -17,9 +17,7 @@
 
 &mt {
     quick-tap-ms = <100>;
-    hold-trigger-key-positions = <>;
-    retro-tap;
-    tapping-term-ms = <100>;
+    tapping-term-ms = <150>;
 };
 
 / {
