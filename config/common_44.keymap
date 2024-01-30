@@ -15,7 +15,12 @@
 
 &lt { quick-tap-ms = <250>; };
 
-&mt { quick-tap-ms = <150>; };
+&mt {
+    quick-tap-ms = <100>;
+    hold-trigger-key-positions = <>;
+    retro-tap;
+    tapping-term-ms = <100>;
+};
 
 / {
     macros {
@@ -47,23 +52,6 @@
     };
 
     behaviors {
-        shift_lang: shift_lang {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_LANG";
-            bindings = <&kp>, <&lang>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <43>;
-            tapping-term-ms = <200>;
-        };
-
-        prtscr_lock: prtscr_lock {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PRTSCR_LOCK";
-            #binding-cells = <0>;
-            bindings = <&kp PRINTSCREEN>, <&Lock>;
-        };
-
         layer_kay: layer_kay {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_KAY";
@@ -163,10 +151,10 @@
             //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
             bindings = <
-&trans  &trans  &mt Y Q  &mt U W  &mt I E             &mt O R            &mt P T               &kp Y        &kp U            &kp I                &kp O    &kp P     &kp LBKT       &mt RWIN RBKT
-        &trans  &mt H A  &mt J S  &mt K D             &mt L F            &mt SEMICOLON G       &kp H        &kp J            &kp K                &kp L    &kp SEMI  &kp SQT
-        &trans  &mt N Z  &mt M X  &mt COMMA C         &mt DOT V          &mt SLASH B           &kp N        &kp M            &kp COMMA            &kp DOT  &kp FSLH  &mt RALT BSLH
-                                  &layer_kay LCTRL 3  &layer_kay LALT 2  &layer_kay LSHFT 1    &lt 0 ENTER  &lt 0 BACKSPACE  &shift_lang RSHFT 0
+&trans  &trans  &mt Y Q  &mt U W  &mt I E             &mt O R            &mt P T               &none  &none  &none  &none  &none  &none  &none
+        &trans  &mt H A  &mt J S  &mt K D             &mt L F            &mt SEMICOLON G       &none  &none  &none  &none  &none  &none
+        &trans  &mt N Z  &mt M X  &mt COMMA C         &mt DOT V          &mt SLASH B           &none  &none  &none  &none  &none  &none
+                                  &layer_kay LCTRL 3  &layer_kay LALT 2  &layer_kay LSHFT 1    &none  &none  &none
             >;
         };
 
